@@ -14,3 +14,26 @@ Write a SQL query using the EXCEPT operator to retrieve records from the "studen
 Write a SQL query using the RIGHT OUTER JOIN operation to retrieve all records from the "teachers" table and the matching records from the "students" table based on the common column course_id. Include columns from both tables.
 
 ## check the difference between the result of expect and right outer join as they are not same. 
+--1
+SELECT  course_id, student_id, student_name FROM students
+INTERSECT
+SELECT teacher_id, teacher_name FROM teatchers
+--2
+SELECT * FROM students
+INNER JOIN teatchers
+ON students.course_id = teatchers.course_id;
+--3
+-- EXCEPT query 
+SELECT student_id, student_name, course_id
+FROM students
+EXCEPT
+SELECT student_id, student_name, course_id
+FROM teachers;
+-- RIGHT OUTER JOIN query
+SELECT students.student_id, students.student_name, students.course_id,
+       teachers.teacher_id, teachers.teacher_name
+FROM students
+RIGHT OUTER JOIN teachers ON students.course_id = teachers.course_id;
+
+
+
