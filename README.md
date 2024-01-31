@@ -15,14 +15,20 @@ Write a SQL query using the RIGHT OUTER JOIN operation to retrieve all records f
 
 ## check the difference between the result of expect and right outer join as they are not same. 
 --1
+
 SELECT  course_id, student_id, student_name FROM students
 INTERSECT
 SELECT teacher_id, teacher_name FROM teatchers
+
+
 --2
+
 SELECT * FROM students
 INNER JOIN teatchers
 ON students.course_id = teatchers.course_id;
+
 --3
+
 -- EXCEPT query 
 SELECT student_id, student_name, course_id
 FROM students
