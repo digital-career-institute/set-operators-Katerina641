@@ -35,7 +35,10 @@ FROM students
 EXCEPT
 SELECT student_id, student_name, course_id
 FROM teachers;
--- RIGHT OUTER JOIN query
+
+--4
+
+RIGHT OUTER JOIN query
 SELECT students.student_id, students.student_name, students.course_id,
        teachers.teacher_id, teachers.teacher_name
 FROM students
